@@ -1,0 +1,2 @@
+# learn-django-with-nextjs
+ 
