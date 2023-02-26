@@ -1,7 +1,10 @@
 // import styles from "@/styles/Home.module.css";
+import React, { useState, useEffect } from "react";
+
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import dynamic from "next/dynamic";
+import Backtotop from "../components/backtotopbutton/backtotop";
 
 const Main = dynamic(() => import("@/components/pages/home"));
 const About = dynamic(() => import("@/components/pages/about"));
@@ -10,6 +13,16 @@ const Projects = dynamic(() => import("@/components/pages/projects"));
 const Contact = dynamic(() => import("@/components/pages/contact"));
 
 export default function Home() {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 90) setScroll(true);
+      else setScroll(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
@@ -19,6 +32,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout />
+      <div className="fixed right-[2%] bottom-0 z-50">
+        <div className={scroll ? "block" : "hidden"}>
+          <Backtotop />
+        </div>
+      </div>
       <Main />
       <About />
       <Skills />
