@@ -22,3 +22,13 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.name
+
+class Mails(models.Model):
+    sender_name = models.CharField(max_length=50)
+    sender_phone = models.CharField(max_length=30)
+    sender_email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.sender_name

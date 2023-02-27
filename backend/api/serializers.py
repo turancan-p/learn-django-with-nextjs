@@ -1,4 +1,4 @@
-from .models import Skills, UsingType, Projects
+from .models import Skills, UsingType, Projects, Mails
 from rest_framework import serializers
 
 class SkillsSerializer(serializers.ModelSerializer):
@@ -14,4 +14,9 @@ class UsingTypeSerializer(serializers.ModelSerializer):
 class ProjectsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Projects
+        fields = "__all__"
+
+class MailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mails
         fields = "__all__"

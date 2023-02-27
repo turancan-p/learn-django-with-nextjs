@@ -5,7 +5,9 @@ from .views import (
     SkillDetailsApiView,
     UsingTypeDetailsApiView,
     ProjectsApiView,
-    ProjectDetailsApiView
+    ProjectDetailsApiView,
+    MailsApiView,
+    sendMessage,
 )
 from django.conf.urls.static import static
 from django.conf import settings
@@ -17,6 +19,8 @@ urlpatterns = [
     path('type/<int:id>/', UsingTypeDetailsApiView.as_view()),
     path('projects/', ProjectsApiView.as_view()),
     path('project/<int:id>/', ProjectDetailsApiView.as_view()),
+    path('mails/', MailsApiView.as_view()),
+    path('send/', sendMessage),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
