@@ -1,10 +1,11 @@
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const contact = () => {
   return (
-    <div className="w-full lg:h-screen">
+    <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto ox-2 oy-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
@@ -32,12 +33,19 @@ const contact = () => {
               <div>
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center py-4">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 mr-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaInstagram />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <AiOutlineMail href="/" />
-                  </div>
+                  <Link
+                    href="https://instagram.com/turancan.pamuk/"
+                    target="_blank"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 mr-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                      <FaInstagram />
+                    </div>
+                  </Link>
+                  <Link href="/#contact">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                      <AiOutlineMail href="/" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -31,17 +31,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout />
-      <div className="fixed right-[2%] bottom-0 z-50">
-        <div className={scroll ? "block" : "hidden"}>
-          <Backtotop />
+      <div className="test">
+        <Layout />
+        <div className="fixed right-[2%] bottom-0 z-50">
+          <div className={scroll ? "block" : "hidden"}>
+            <Backtotop />
+          </div>
         </div>
+        <Main />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </div>
-      <Main />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
     </>
   );
 }

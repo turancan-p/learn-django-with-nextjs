@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
 import ProjectItems from "../cards/projectItems";
+import axios from "axios";
 
 const projects_url = "http://127.0.0.1:8000/api/projects/";
 
 const projects = () => {
   const [projectData, setProjectData] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+
+  const handleProjects = () => {
+    const fecthData = async () => {
+      const projectResults = await axios(projects_url);
+      setProjectData(projectResults.data);
+    };
+    fecthData();
+  };
 
   useEffect(() => {
-    setLoading(true);
-    fetch(projects_url)
-      .then((res) => res.json())
-      .then((data3) => {
-        setProjectData(data3);
-        setLoading(false);
-      });
-  }, []);
+    handleProjects();
+  }, [handleProjects]);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!projectData) return <p>No Data</p>;
+  if (!projectData) return <p>Waiting Data...</p>;
 
   return (
-    <div className="w-full">
+    <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projects

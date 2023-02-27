@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { FiRefreshCcw } from "react-icons/fi";
 
 const skills_url = "http://127.0.0.1:8000/api/skills/";
 const types_url = "http://127.0.0.1:8000/api/types/";
@@ -6,28 +8,26 @@ const types_url = "http://127.0.0.1:8000/api/types/";
 const skills = () => {
   const [skillData, setSkillData] = useState(null);
   const [typeData, setTypeData] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+
+  const handleSkills = () => {
+    const fecthData = async () => {
+      const skillsResults = await axios(skills_url);
+      const typesResults = await axios(types_url);
+
+      setSkillData(skillsResults.data);
+      setTypeData(typesResults.data);
+    };
+    fecthData();
+  };
 
   useEffect(() => {
-    setLoading(true);
-    fetch(skills_url)
-      .then((res) => res.json())
-      .then((data) => {
-        setSkillData(data);
-      });
-    fetch(types_url)
-      .then((res) => res.json())
-      .then((data2) => {
-        setTypeData(data2);
-        setLoading(false);
-      });
-  }, []);
+    handleSkills();
+  }, [handleSkills]);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!skillData) return <p>No Data</p>;
+  if (!skillData) return <p>Waiting Data...</p>;
 
   return (
-    <div className="w-full lg:h-screen p-2 py-16">
+    <div id="skills" className="w-full lg:h-screen p-2 py-16">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
