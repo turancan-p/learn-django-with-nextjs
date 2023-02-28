@@ -26,7 +26,7 @@ const Nav = () => {
       <div
         className={
           scroll
-            ? "fixed w-full h-20 shadow-xl z-[100]"
+            ? "fixed w-full h-20 shadow-xl z-[100] bg-white bg-opacity-10 backdrop-blur-lg"
             : "fixed w-full h-20 z-[100]"
         }
       >
@@ -128,7 +128,7 @@ const Nav = () => {
                   </p>
                   <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                     <Link href="https://github.com/turancan-p/" target="_blank">
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                      <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                         <FaGithub />
                       </div>
                     </Link>
@@ -137,13 +137,13 @@ const Nav = () => {
                       href="https://instagram.com/turancan.pamuk/"
                       target="_blank"
                     >
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                      <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                         <FaInstagram />
                       </div>
                     </Link>
 
                     <Link href="/#contact">
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                      <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                         <AiOutlineMail />
                       </div>
                     </Link>

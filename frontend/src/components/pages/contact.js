@@ -36,14 +36,14 @@ const contact = () => {
 
   return (
     <div id="contact" className="w-full lg:h-screen">
-      <div className="max-w-[1240px] m-auto ox-2 oy-16 w-full">
+      <div className="max-w-[1240px] m-auto px-4 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
         </p>
         <h2 className="py-4">Get In Touch</h2>
         <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
+          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-md shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
               <div>
                 <img
@@ -67,12 +67,12 @@ const contact = () => {
                     href="https://instagram.com/turancan.pamuk/"
                     target="_blank"
                   >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 mr-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                    <div className="rounded-full shadow-md shadow-gray-400 p-3 mr-3 cursor-pointer hover:scale-105 ease-in duration-300">
                       <FaInstagram />
                     </div>
                   </Link>
                   <Link href="/#contact">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                    <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                       <AiOutlineMail href="/" />
                     </div>
                   </Link>
@@ -81,7 +81,7 @@ const contact = () => {
             </div>
           </div>
           {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
+          <div className="col-span-3 w-full h-auto shadow-md shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
               <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
